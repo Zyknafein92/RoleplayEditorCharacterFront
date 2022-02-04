@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <form [formGroup]="forms">
+    <div class="formLine">
+      <mat-form-field class="col-md-4">
+        <mat-label>Votre nom et prénom :</mat-label>
+        <input matInput formControlName="fullName" type="text" placeholder="Nom & Prénom">
+        <mat-error [hidden]="forms.get('fullName').valid || forms.get('fullName').touched">
+          Le <strong>nom</strong> du personnage doit être renseigné.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="formLine">
+      <mat-form-field class="col-md-4">
+        <mat-label>Votre age:</mat-label>
+        <input matInput formControlName="age" type="number" placeholder="Age">
+        <mat-error [hidden]="forms.get('age').valid || forms.get('age').touched">
+          <strong>L'âge</strong> du personnage doit être renseigné.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="formLine">
+      <mat-form-field class="col-md-4">
+        <mat-label>Votre rang:</mat-label>
+        <mat-select placeholder="rang" formControlName="rank">
+          <mat-option *ngFor="let rank of rankList"
+                      [value]="rank">{{rank}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="formLine">
+      <mat-form-field class="col-md-4">
+        <mat-label>Votre sobriquet:</mat-label>
+        <input matInput type="text" formControlName="nickName">
+        <mat-error [hidden]="forms.get('nickName').valid || forms.get('nickName').touched">
+          Le <strong>sobriquet</strong> du product doit être renseigné.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-6">
+        <button type="button" (click)="redirectToHomePage()">Partir</button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" (click)="saveCharacter()">Signer</button>
+      </div>
+    </div>
+  </form>
+</div>
+

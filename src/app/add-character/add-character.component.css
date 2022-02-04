@@ -1,0 +1,11 @@
+.wrapper {
+  width: 100%;
+  background-image: url("src/assets/oldScroll.jpeg");
+  background-size: cover;
+}
+
+.formLine {
+  text-align: center;
+  color: black;
+}
+
